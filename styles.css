@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Quicksand:wght@300;400;700&display=swap');
+
+:root {
+    --bege: #fef6e4;
+    --marrom-claro: #f3d2c1;
+    --azul-escuro: #001858;
+    --azul: #172c66;
+    --laranja: #f4a719;
+    --rosa: #f582ae;
+    --rosa-claro: #f8d7da;
+    --verde-claro: #d4edda;
+    --verde: #155724;
+    --vermelho: #721c24;
+
+
+    --lilita-one: 'Lilita One', cursive;
+    --quicksand: 'Quicksand', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bege);
+}
+
+.app {
+    background-color: var(--marrom-claro);
+    border-radius: 30px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    font-family: var(--josefin-sans);
+    color: var(--azul);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 600px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.app > h1 {
+    font-family: var(--lilita-one);
+    font-size: 48px;
+    color: var(--azul-escuro);
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+.quiz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.quiz > h2 {
+    font-family: var(--quicksand);
+    font-size: 24px;
+    color: var(--azul);
+    font-weight: 600;
+}
+
+.btn {
+    font-family: var(--quicksand);
+    font-size: 20px;
+    color: var(--azul);
+    background: var(--bege);
+    width: 90%;
+    border: 2px solid var(--laranja);
+    border-radius: 18px;
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    justify-content: center;
+}
+
+.btn:hover:not([disabled]){
+    background: var(--laranja);
+    color: var(--bege);
+}
+
+.btn:disabled {
+    cursor:no-drop;
+}
+
+#answer-buttons {
+    margin: 0;
+    padding: 0;
+}
+
+#next-btn {
+    background: #001e4d;
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+
+.correct {
+    background: var(--verde-claro);
+    color: var(--verde);
+    border-color: var(--verde);
+    font-weight: 800;
+}
+
+.incorrect {
+    background: var(--rosa-claro);
+    color: var(--vermelho);
+    border-color: var(--vermelho);
+    font-weight: 800;
+}

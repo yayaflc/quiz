@@ -32,11 +32,11 @@ const questions = [
     {
         question: "Qual desses mamíferos põe ovos?",
         answers: [
-            { option: "Castor", correct: false },
-            { option: "Ornitorinco", correct: true },
-            { option: "Esquilo", correct: false },
-            { option: "Lontra", correct: false },
-            { option: "Morcegos", correct: false },
+            { text: "Castor", correct: false },
+            { text: "Ornitorinco", correct: true },
+            { text: "Esquilo", correct: false },
+            { text: "Lontra", correct: false },
+            { text: "Morcegos", correct: false },
         ],
     },
 ];
@@ -51,7 +51,7 @@ let score = 0;
 function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
-    nextButton.innerHTML = "Next";
+    nextButton.innerHTML = "avançar";
     showQuestion();
 }
 

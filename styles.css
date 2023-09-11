@@ -3,12 +3,12 @@
 :root {
     --bege: #fef6e4;
     --marrom-claro: #f3d2c1;
+    --marrom-escuro-transparente: rgba(149, 105, 71, 0.701);
     --azul-escuro: #001858;
     --azul: #172c66;
-    --laranja: #f4a719;
-    --rosa: #f582ae;
-    --rosa-claro: #f8d7da;
-    --verde-claro: #d4edda;
+    --marrom-escuro: rgb(149, 105, 71);
+    --rosa-claro: #eebbbf;
+    --verde-claro: #cdf2d6;
     --verde: #155724;
     --vermelho: #721c24;
 
@@ -48,7 +48,9 @@ body {
     font-size: 48px;
     color: var(--azul-escuro);
     text-align: center;
-    border-bottom: 1px solid #333;
+    border-bottom: 2px solid var(--marrom-escuro-transparente);
+    margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
 .quiz {
@@ -56,7 +58,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    width: 80%;
 }
 
 .quiz > h2 {
@@ -69,10 +71,11 @@ body {
 .btn {
     font-family: var(--quicksand);
     font-size: 20px;
+    font-weight: 800;
     color: var(--azul);
     background: var(--bege);
     width: 90%;
-    border: 2px solid var(--laranja);
+    border: 2px solid var(--marrom-escuro);
     border-radius: 18px;
     padding: 10px;
     margin: 10px;
@@ -83,7 +86,7 @@ body {
 }
 
 .btn:hover:not([disabled]){
-    background: var(--laranja);
+    background: var(--marrom-escuro);
     color: var(--bege);
 }
 
@@ -91,15 +94,20 @@ body {
     cursor:no-drop;
 }
 
-#answer-buttons {
-    margin: 0;
-    padding: 0;
+.answer-btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
 #next-btn {
-    background: #001e4d;
-    color: #fff;
-    font-weight: 500;
+    font-family: var(--quicksand);
+    font-size: 18px;
+    background: var(--azul-escuro);
+    color: var(--bege);
+    font-weight: 800;
     width: 150px;
     border: 0;
     padding: 10px;
@@ -121,4 +129,22 @@ body {
     color: var(--vermelho);
     border-color: var(--vermelho);
     font-weight: 800;
+}
+
+@media (max-width: 650px) {
+    .app {
+        width: 80%;
+    }
+
+    .app > h1 {
+        font-size: 32px;
+    }
+
+    .quiz > h2 {
+        font-size: 22px;
+    }
+
+    .btn {
+        font-size: 18px;
+    }
 }

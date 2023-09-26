@@ -126,3 +126,40 @@ nextButton.addEventListener("click", () => {
 
 startQuiz();
 
+var icon = document.querySelector("[data-theme-toggle]");
+loadTheme();
+
+function toggleTheme() {
+    let currentThemeSetting = document.querySelector("html").getAttribute("data-theme");
+
+    if (currentThemeSetting === "dark") {
+        document.querySelector("html").setAttribute("data-theme", "light");
+        currentThemeSetting = "light";
+        icon.innerText = "light_mode";
+
+        localStorage.setItem("theme", "light");
+    } else {
+        document.querySelector("html").setAttribute("data-theme", "dark");
+        icon.innerText = "dark_mode";
+
+        localStorage.setItem("theme", "dark");
+    }
+}
+
+function loadTheme () {
+    let SystemThemeSetting = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    
+    let currentThemeSetting = localStorage.getItem("theme");         
+    
+    if(currentThemeSetting === "dark" || (SystemThemeSetting === true && currentThemeSetting === null)) {
+        newTheme = "dark";
+        changeIcon = "dark_mode";
+    } else {
+        newTheme = "light";
+        changeIcon = "light_mode";
+    }
+    
+    icon.innerText = changeIcon;
+    document.querySelector("html").setAttribute("data-theme", newTheme);
+}
+

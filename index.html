@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href= "styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
         <title>Animal Quiz</title>
     </head>
-
+        
+    <header>
+        <button class="btn-theme material-symbols-outlined" type="button" data-theme-toggle aria-label="Change to light theme" onclick="toggleTheme()"> light_mode </button>
+    </header>
+    
     <body>
         <div class="app">
             <h1>Animal Quiz</h1>
             <div class="quiz">
                 <h2 id="question">question goes here</h2>
-                <div class="answer-btns" id="answer-buttons">
+                <div id="answer-buttons">
                     <button class="btn">answer 1</button>
                     <button class="btn">answer 2</button>
                     <button class="btn">answer 3</button>

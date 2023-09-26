@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Quicksand:wght@300;400;700&display=swap');
 
 :root {
-    --bege: #fef6e4;
-    --marrom-claro: #f3d2c1;
-    --marrom-escuro-transparente: rgba(149, 105, 71, 0.701);
-    --azul-escuro: #001858;
-    --azul: #172c66;
-    --marrom-escuro: rgb(149, 105, 71);
     --rosa-claro: #eebbbf;
     --verde-claro: #cdf2d6;
     --verde: #155724;
@@ -17,22 +11,58 @@
     --quicksand: 'Quicksand', sans-serif;
 }
 
+[data-theme="light"] {
+    --card-color: #f3d2c1;
+    --bg-color: #fef6e4;
+    --tittle-color: #001858;
+    --text-color: #172c66;
+    --btn-hover-color: #956947;
+    --btn-icon-theme: #000;
+    --btn-hover-icon: #ffffffcd;
+}
+
+[data-theme="dark"] {
+    --card-color:#001858;
+    --bg-color:#02092b;
+    --tittle-color: #f3d2c1;
+    --text-color: #f3d2c1;
+    --btn-hover-color: #728cd4;
+    --btn-icon-theme: #fff;
+    --btn-hover-icon: #323232c4;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 60px 120px 0 0;
+}
+
+.btn-theme {
+    border: none;
+    background: var(--btn-hover-icon);
+    border-radius: 50px;
+    cursor: pointer;
+    color: var(--btn-icon-theme);
+    font-size: 40px !important;
+    padding: 2px;
+}
+
 body {
-    background-color: var(--bege);
+    background-color: var(--bg-color);
 }
 
 .app {
-    background-color: var(--marrom-claro);
+    background-color: var(--card-color);
     border-radius: 30px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     font-family: var(--josefin-sans);
-    color: var(--azul);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,9 +76,9 @@ body {
 .app > h1 {
     font-family: var(--lilita-one);
     font-size: 48px;
-    color: var(--azul-escuro);
+    color: var(--tittle-color);
     text-align: center;
-    border-bottom: 2px solid var(--marrom-escuro-transparente);
+    border-bottom: 2px solid rgba(149, 105, 71, 0.701);
     margin-bottom: 30px;
     text-transform: uppercase;
 }
@@ -64,7 +94,7 @@ body {
 .quiz > h2 {
     font-family: var(--quicksand);
     font-size: 24px;
-    color: var(--azul);
+    color: var(--text-color);
     font-weight: 600;
 }
 
@@ -72,10 +102,10 @@ body {
     font-family: var(--quicksand);
     font-size: 20px;
     font-weight: 800;
-    color: var(--azul);
-    background: var(--bege);
+    color: var(--text-color);
+    background: var(--bg-color);
     width: 90%;
-    border: 2px solid var(--marrom-escuro);
+    border: 2px solid var(--btn-hover-color);
     border-radius: 18px;
     padding: 10px;
     margin: 10px;
@@ -86,15 +116,15 @@ body {
 }
 
 .btn:hover:not([disabled]){
-    background: var(--marrom-escuro);
-    color: var(--bege);
+    background: var(--btn-hover-color);
+    color: var(--bg-color);
 }
 
 .btn:disabled {
     cursor:no-drop;
 }
 
-.answer-btns {
+#answer-buttons {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -105,8 +135,8 @@ body {
 #next-btn {
     font-family: var(--quicksand);
     font-size: 18px;
-    background: var(--azul-escuro);
-    color: var(--bege);
+    background: var(--tittle-color);
+    color: var(--bg-color);
     font-weight: 800;
     width: 150px;
     border: 0;
